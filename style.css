@@ -1,0 +1,379 @@
+/* 页面主容器样式 */
+.container {
+  max-width: 1200px; /* 最大宽度限制 */
+  margin: 0 auto; /* 水平居中 */
+  padding: 20px; /* 内边距 */
+}
+
+/* 主标题样式 */
+h1 {
+  text-align: center; /* 文字居中 */
+  color: #333; /* 文字颜色 */
+  margin-bottom: 50px; /* 下边距 */
+  font-size: 100px; /* 字体大小 */
+}
+
+/* 背景模糊效果 */
+body::before {
+  content: '';
+  position: fixed; /* 固定定位 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 全宽 */
+  height: 100%; /* 全高 */
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0)); /* 渐变背景 */
+  backdrop-filter: blur(20px); /* 背景模糊 */
+  z-index: -1; /* 置于底层 */
+}
+
+/* 平台选择容器样式 */
+.platforms {
+  display: flex; /* 弹性布局 */
+  justify-content: center; /* 水平居中 */
+  gap: 180px; /* 元素间距 */
+  padding: 20px; /* 内边距 */
+}
+
+/* 平台选择卡片样式 */
+.platform {
+  background: linear-gradient(135deg, #0078d7, #00bcf2); /* 渐变背景 */
+  padding: 40px 30px; /* 内边距 */
+  border-radius: 20px; /* 圆角 */
+  text-align: center; /* 文字居中 */
+  width: 400px; /* 固定宽度 */
+  min-height: 200px; /* 最小高度 */
+  display: flex; /* 弹性布局 */
+  flex-direction: column; /* 垂直排列 */
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  transition: all 0.3s ease; /* 过渡效果 */
+  text-decoration: none !important; /* 去除下划线 */
+}
+
+/* MAC平台卡片样式 */
+.platform.mac {
+  background: linear-gradient(135deg, #ff2d55, #ff9500) !important; /* 不同渐变背景 */
+}
+
+/* 平台标题样式 */
+.platform h2 {
+  color: white; /* 文字颜色 */
+  font-size: 50px; /* 字体大小 */
+  margin: 0; /* 去除外边距 */
+  text-decoration: none !important; /* 去除下划线 */
+  display: flex; /* 弹性布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  height: 100%; /* 全高 */
+  padding: 20px; /* 内边距 */
+  border-radius: 10px; /* 圆角 */
+  border-bottom: none; /* 去除底部边框 */
+}
+
+/* 平台链接样式 */
+.platform a {
+  text-decoration: none !important; /* 去除下划线 */
+}
+
+/* 下载选项容器样式 */
+.download-options {
+  display: flex; /* 弹性布局 */
+  gap: 80px; /* 元素间距 */
+  padding: 40px; /* 内边距 */
+  background: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+  border-radius: 50px; /* 圆角 */
+  backdrop-filter: blur(10px); /* 背景模糊 */
+  border: 10px solid rgba(255, 255, 255, 0.2); /* 边框 */
+  position: relative; /* 相对定位 */
+  z-index: 1; /* 层级 */
+}
+
+/* 下载选项样式 */
+.option {
+  position: relative; /* 相对定位 */
+  z-index: 2; /* 层级 */
+  flex: 1; /* 弹性比例 */
+  padding: 40px; /* 内边距 */
+  border-radius: 20px; /* 圆角 */
+  background: linear-gradient(145deg, #0078d7, #00bcf2); /* 渐变背景 */
+  position: relative; /* 相对定位 */
+  overflow: hidden; /* 溢出隐藏 */
+  transition: all 0.4s ease; /* 过渡效果 */
+  display: flex; /* 弹性布局 */
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+}
+
+/* MAC下载选项样式 */
+.option.mac {
+  background: linear-gradient(145deg, #ff2d55, #ff9500) !important; /* 不同渐变背景 */
+}
+
+/* 下载选项hover效果 */
+.option::before {
+  content: '';
+  position: absolute; /* 绝对定位 */
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%); /* 径向渐变 */
+  opacity: 0; /* 初始透明 */
+  transition: opacity 0.4s ease; /* 过渡效果 */
+}
+
+.option:hover {
+  transform: translateY(-10px); /* 上移效果 */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* 阴影 */
+}
+
+.option:hover::before {
+  background: linear-gradient(145deg, #ff2d55, #ff9500) !important; /* 不同渐变背景 */
+  opacity: 1; /* 显示效果 */
+  
+}
+
+/* 下载选项标题样式 */
+.option h2 {
+  color: white; /* 文字颜色 */
+  font-size: 32px; /* 字体大小 */
+  margin-bottom: 20px; /* 下边距 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 文字阴影 */
+  text-align: center; /* 文字居中 */
+  width: 100%; /* 全宽 */
+  
+}
+
+/* 下载选项链接样式 */
+.option a {
+  color: inherit; /* 继承颜色 */
+  text-decoration: none; /* 去除下划线 */
+  display: flex; /* 弹性布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  padding: 40px; /* 增大内边距 */
+  pointer-events: auto; /* 允许点击 */
+  position: relative; /* 相对定位 */
+  z-index: 3; /* 层级 */
+  width: 100%; /* 填满容器宽度 */
+  height: 100%; /* 填满容器高度 */
+  box-sizing: border-box; /* 包含padding在尺寸内 */
+  min-height: 120px; /* 最小高度 */
+  
+}
+
+.option a:hover {
+  text-decoration: none; /* 去除下划线 */
+}
+
+.option h2 {
+  text-decoration: none !important; /* 去除下划线 */
+}
+
+/* 按钮容器样式 */
+.option .btn {
+  margin: 0 auto; /* 水平居中 */
+}
+
+/* 按钮基础样式 */
+.btn {
+  display: flex; /* 弹性布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  padding: 30px 40px; /* 增大内边距 */
+  background: linear-gradient(145deg, #0078d7, #00bcf2); /* 渐变背景 */
+  color: white; /* 文字颜色 */
+  border-radius: 12px; /* 增大圆角 */
+  text-decoration: none; /* 去除下划线 */
+  font-size: 20px; /* 增大字体 */
+  font-weight: bold; /* 加粗 */
+  position: relative; /* 相对定位 */
+  overflow: hidden; /* 溢出隐藏 */
+  transition: all 0.3s ease; /* 过渡效果 */
+  width: 100%; /* 填满容器宽度 */
+  height: 100%; /* 填满容器高度 */
+  box-sizing: border-box; /* 包含padding在尺寸内 */
+  min-height: 120px; /* 最小高度 */
+}
+
+/* 按钮hover效果 */
+.btn::after {
+  content: '';
+  position: absolute; /* 绝对定位 */
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%); /* 径向渐变 */
+  transform: translate(-50%, -50%) scale(0); /* 初始缩放 */
+  opacity: 0; /* 初始透明 */
+  transition: all 0.4s ease; /* 过渡效果 */
+}
+
+.btn:hover {
+  transform: scale(1.05); /* 缩放效果 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 阴影 */
+}
+
+.btn:hover::after {
+  transform: translate(-50%, -50%) scale(1); /* 缩放效果 */
+  opacity: 1; /* 显示效果 */
+}
+
+/* 返回按钮样式 */
+.back-btn {
+  display: block; /* 块级元素 */
+  margin: 40px auto 0; /* 外边距 */
+  padding: 12px 24px; /* 内边距 */
+  background: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+  color: rgb(0, 0, 0); /* 文字颜色 */
+  border-radius: 8px; /* 圆角 */
+  text-decoration: none; /* 去除下划线 */
+  font-size: 16px; /* 字体大小 */
+  text-align: center; /* 文字居中 */
+  transition: all 0.3s ease; /* 过渡效果 */
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2); /* hover背景 */
+  transform: translateY(-2px); /* 上移效果 */
+}
+
+/* 父容器样式 */
+.parent {  
+  display: grid; /* 网格布局 */
+  place-items: center; /* 内容居中 */
+}  
+
+/* AE插件容器样式 */
+.ae-plugins {  
+  margin-top: 40px; /* 上边距 */
+  padding: 30px; /* 内边距 */
+  background: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+  border-radius: 16px; /* 圆角 */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* 边框 */
+  backdrop-filter: blur(10px); /* 背景模糊 */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); /* 阴影 */
+  width: 95%; /* 宽度 */
+}  
+
+/* AE插件标题样式 */
+.ae-plugins h2 {
+  text-align: center; /* 文字居中 */
+  color: #333; /* 文字颜色 */
+  margin-bottom: 30px; /* 下边距 */
+  font-size: 44px; /* 字体大小 */
+}
+
+/* 插件网格容器样式 */
+.plugin-grid {
+  display: flex;
+  overflow-x: auto; /* 启用横向滚动条 */
+  scroll-behavior: smooth;
+  gap: 30px;
+  padding: 20px;
+  cursor: grab; /* 显示抓取光标 */
+  scroll-snap-type: x mandatory; /* 启用滚动吸附 */
+  -webkit-overflow-scrolling: touch; /* 移动端惯性滚动 */
+}
+
+/* 单个插件项样式 */
+.plugin-item {
+  flex: 0 0 300px; /* 固定宽度且不允许伸缩 */
+  scroll-snap-align: start; /* 滚动吸附对齐 */
+  background: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+  border-radius: 12px; /* 圆角 */
+  padding: 20px; /* 内边距 */
+  backdrop-filter: blur(5px); /* 背景模糊 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 边框 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 过渡效果 */
+}
+
+.plugin-item:hover {
+  transform: translateY(-5px); /* 上移效果 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* 阴影 */
+}
+
+/* 插件图标样式 */
+.plugin-icon {
+  margin-bottom: 0; /* 去除下边距 */
+}
+
+/* 插件名称样式 */
+.plugin-name {
+  display: block; /* 块级元素 */
+  margin-top: 10px; /* 上边距 */
+  font-size: 18px; /* 字体大小 */
+  font-weight: bold; /* 加粗 */
+  color: #333; /* 文字颜色 */
+  padding: 10px 0; /* 内边距 */
+}
+
+/* 插件图标图片样式 */
+.plugin-icon img {
+  width: 64px; /* 宽度 */
+  height: 64px; /* 高度 */
+  object-fit: contain; /* 保持比例 */
+}
+
+/* 插件预览图样式 */
+.plugin-preview {
+  margin: 20px 0; /* 上下边距 */
+}
+
+.plugin-preview img {
+  width: 100%; /* 全宽 */
+  height: 200px; /* 固定高度 */
+  object-fit: cover; /* 覆盖 */
+  border-radius: 8px; /* 圆角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影 */
+  transition: transform 0.3s ease; /* 过渡效果 */
+}
+
+.plugin-preview img:hover {
+  transform: scale(1.05); /* 缩放效果 */
+}
+
+/* 插件描述样式 */
+.plugin-desc {
+  color: #666; /* 文字颜色 */
+  line-height: 1.6; /* 行高 */
+  font-size: 14px; /* 字体大小 */
+}
+
+/* 响应式设计 - 平板设备 */
+@media (max-width: 768px) {
+  .platforms {
+    flex-direction: column; /* 垂直排列 */
+    gap: 20px; /* 元素间距 */
+  }
+  
+  .platform {
+    width: 100%; /* 全宽 */
+  }
+  
+  .plugin-grid {
+    gap: 15px; /* 元素间距 */
+    padding: 10px; /* 内边距 */
+  }
+  
+  .plugin-item {
+    width: 280px; /* 宽度 */
+  }
+}
+
+/* 响应式设计 - 手机设备 */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 50px; /* 字体大小 */
+  }
+  
+  .plugin-name {
+    font-size: 16px; /* 字体大小 */
+  }
+  
+  .plugin-preview img {
+    height: 150px; /* 高度 */
+  }
+}
